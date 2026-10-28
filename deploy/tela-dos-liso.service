@@ -1,0 +1,17 @@
+[Unit]
+Description=TELA DOS LISO WebRTC signaling server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/tela-dos-liso
+Environment=NODE_ENV=production
+Environment=PORT=3000
+ExecStart=/usr/bin/node /opt/tela-dos-liso/server.js
+Restart=always
+RestartSec=3
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
